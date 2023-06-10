@@ -1,6 +1,7 @@
 import './style.css';
 
 const days = new Array(42).fill(1);
+const titles = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 function Calendar() {
 
@@ -13,6 +14,7 @@ function Calendar() {
         <div>2023</div>
         <div>&gt;</div>
       </div>
+      <div className='calendar-titles'>{titles.map((title)=><span>{title}</span>)}</div>
       <section className="calendar-body">
         {days.map((_,idx)=> {
           return (

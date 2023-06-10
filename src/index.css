@@ -12,6 +12,12 @@
   padding: 10px;
 }
 
+.calendar-titles {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em 0;
+}
+
 .calendar-body {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
