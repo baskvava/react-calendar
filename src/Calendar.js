@@ -100,9 +100,9 @@ function Calendar() {
           <button onClick={() => handleYearClick(1)}>&gt;</button>
         </div>
         <div className="inner">
-        <button onClick={() => handleMonthClick(-1)}>&lt;</button>
-        <div>{MONTHS[todayMonth]}</div>
-        <button onClick={() => handleMonthClick(1)}>&gt;</button>
+          <button onClick={() => handleMonthClick(-1)}>&lt;</button>
+          <div>{MONTHS[todayMonth]}</div>
+          <button onClick={() => handleMonthClick(1)}>&gt;</button>
         </div>
       </div>
       <div className='calendar-titles'>{TITLES.map((title)=><span key={title}>{title}</span>)}</div>

@@ -1,6 +1,6 @@
 .calendar-wrapper {
   width: 60vw;
-  font-size: large;
+  font-size: 1em;
   font-weight: 900;
   background-color: rgb(37, 37,37);
   color: aliceblue;
@@ -14,14 +14,13 @@
 
 .calendar-header > .inner {
   display: flex;
-  /* justify-content: space-around; */
   justify-content: space-evenly;
 }
 
 .calendar-header > .inner > button {
   background-color: rgb(37, 37,37);
   color: aliceblue;
-  font-size: x-large;
+  font-size: 1em;
   border: 0px solid;
   cursor: pointer;
   margin: 0 2em;
@@ -54,6 +53,14 @@
   cursor: pointer;
 }
 
-/* .calendar-days:not(disabled):hover {
-  background-color: #fafafa;
-} */
+@media only screen and (max-width: 600px) {
+  .calendar-wrapper {
+    font-size: 0.5em;
+    font-weight: 600;
+  }
+
+  .calendar-header {
+    display: grid;
+    padding: 10px;
+  }
+}
