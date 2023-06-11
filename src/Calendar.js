@@ -3,6 +3,11 @@ import './style.css';
 
 // constant
 const TITLES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const MONTHS = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+
+
 const DAYS_A_WEEK = 7;
 
 const composeCss = (cssStyle = [], isToday) => {
@@ -54,16 +59,15 @@ const DisplayDays = ({
 
 const TODAY = new Date();
 const DATE = TODAY.getDate();
+const MONTH = TODAY.getMonth();
 const FULL_YEAR = TODAY.getFullYear();
 
 function Calendar() {
 
   const [today, setToday] = useState(DATE);
-  const todayMonth = TODAY.getMonth();
+  const [todayMonth, setTodayMonth] = useState(MONTH);
   const [todayYear, setTodayYear] = useState(FULL_YEAR);
 
-  console.log({today})
-  console.log("todayM", todayMonth - 1);
   // prevMonDays
   const prevMonthFilledLength = new Date(todayYear, todayMonth, 0).getDay();
   const prevDays = new Date(todayYear, todayMonth, 0).getDate();
@@ -82,13 +86,24 @@ function Calendar() {
     setTodayYear(prev => prev + val);
   }
 
+  const handleMonthClick = (val) => {
+    setTodayMonth(prev => prev + val);
+  }
+
 
   return (
     <div className="calendar-wrapper">
       <div className="calendar-header">
-        <button onClick={() => handleYearClick(-1)}>&lt;</button>
-        <div>{todayYear}</div>
-        <button onClick={() => handleYearClick(1)}>&gt;</button>
+        <div className="inner">
+          <button onClick={() => handleYearClick(-1)}>&lt;</button>
+          <div>{todayYear}</div>
+          <button onClick={() => handleYearClick(1)}>&gt;</button>
+        </div>
+        <div className="inner">
+        <button onClick={() => handleMonthClick(-1)}>&lt;</button>
+        <div>{MONTHS[todayMonth]}</div>
+        <button onClick={() => handleMonthClick(1)}>&gt;</button>
+        </div>
       </div>
       <div className='calendar-titles'>{TITLES.map((title)=><span key={title}>{title}</span>)}</div>
       <section className="calendar-body">

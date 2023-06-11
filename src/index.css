@@ -12,12 +12,19 @@
   padding: 10px;
 }
 
-.calendar-header > button {
+.calendar-header > .inner {
+  display: flex;
+  /* justify-content: space-around; */
+  justify-content: space-evenly;
+}
+
+.calendar-header > .inner > button {
   background-color: rgb(37, 37,37);
   color: aliceblue;
   font-size: x-large;
   border: 0px solid;
   cursor: pointer;
+  margin: 0 2em;
 }
 
 .calendar-titles {
