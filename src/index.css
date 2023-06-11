@@ -12,6 +12,14 @@
   padding: 10px;
 }
 
+.calendar-header > button {
+  background-color: rgb(37, 37,37);
+  color: aliceblue;
+  font-size: x-large;
+  border: 0px solid;
+  cursor: pointer;
+}
+
 .calendar-titles {
   display: flex;
   justify-content: space-around;
@@ -28,12 +36,17 @@
   text-align: center;
   vertical-align: middle;
   border: 1px solid;
+  background-color: aqua;
 }
 
-.calendar-days:not(disabled) {
+.calendar-days:not(.selected) {
+  background-color: buttonface;
+}
+
+.calendar-days:not([disabled]) {
   cursor: pointer;
 }
 
-.calendar-days:not(disabled):hover {
+/* .calendar-days:not(disabled):hover {
   background-color: #fafafa;
-}
+} */
